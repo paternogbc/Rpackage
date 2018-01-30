@@ -7,7 +7,6 @@
 #' @param sd standard deviation of the mean
 #' @param style the style output ("vector", "data.frame")
 #' @param ncol the number of columns if style == "data.frame"
-#' @details
 #' @details This functions generate random numbers based on the nomral distribution
 #' through the function \code{rnorm}. It uses the 'mean' and standard deviation of the
 #' mean to generate 'n' random numbers. The user can choose to generate multiple
@@ -22,11 +21,15 @@
 #' @author Your Full Name
 #' @seealso \code{\link[stats]{rnorm}}
 #' @references Your refrence goes here.
+#' @importFrom stats rnorm
 #' @examples
-#'
+#' rand(n = 10)
+#' rand(n = 100, mean = 3, sd = 1)
+#' # style == "data.frame"
+#' rand(n = 10, style = "data.frame", ncol = 1)
+#' rand(n = 100, mean = 3, sd = 1, style = "data.frame", ncol = 5)
 #' @export
 #'
-
 rand <- function(n, mean = 0, sd = 1, style = c("vector","data.frame"),
                  ncol = NULL) {
   # error checking:
